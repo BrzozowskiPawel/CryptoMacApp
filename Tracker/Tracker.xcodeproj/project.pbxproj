@@ -20,6 +20,7 @@
 		E572336A28D7857800CBBB19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E572336D28D7857800CBBB19 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E572336F28D7857800CBBB19 /* Tracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tracker.entitlements; sourceTree = "<group>"; };
+		E572337528D7860800CBBB19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +53,7 @@
 		E572336528D7857600CBBB19 /* Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				E572337528D7860800CBBB19 /* Info.plist */,
 				E572336628D7857600CBBB19 /* TrackerApp.swift */,
 				E572336828D7857600CBBB19 /* ContentView.swift */,
 				E572336A28D7857800CBBB19 /* Assets.xcassets */,
@@ -276,6 +278,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Tracker/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -303,6 +306,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Tracker/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
