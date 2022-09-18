@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct TrackerApp: App {
+    
+    @NSApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            EmptyView()
+                .frame(width: 0, height: 0)
         }
     }
 }

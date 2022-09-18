@@ -8,18 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		E572336728D7857600CBBB19 /* TrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E572336628D7857600CBBB19 /* TrackerApp.swift */; };
-		E572336928D7857600CBBB19 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E572336828D7857600CBBB19 /* ContentView.swift */; };
 		E572336B28D7857800CBBB19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E572336A28D7857800CBBB19 /* Assets.xcassets */; };
 		E572336E28D7857800CBBB19 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E572336D28D7857800CBBB19 /* Preview Assets.xcassets */; };
+		E572337728D786BC00CBBB19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E572337628D786BC00CBBB19 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E572336328D7857600CBBB19 /* Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E572336628D7857600CBBB19 /* TrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerApp.swift; sourceTree = "<group>"; };
-		E572336828D7857600CBBB19 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E572336A28D7857800CBBB19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E572336D28D7857800CBBB19 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E572336F28D7857800CBBB19 /* Tracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tracker.entitlements; sourceTree = "<group>"; };
+		E572337528D7860800CBBB19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E572337628D786BC00CBBB19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,11 +53,12 @@
 		E572336528D7857600CBBB19 /* Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				E572337528D7860800CBBB19 /* Info.plist */,
 				E572336628D7857600CBBB19 /* TrackerApp.swift */,
-				E572336828D7857600CBBB19 /* ContentView.swift */,
 				E572336A28D7857800CBBB19 /* Assets.xcassets */,
 				E572336F28D7857800CBBB19 /* Tracker.entitlements */,
 				E572336C28D7857800CBBB19 /* Preview Content */,
+				E572337628D786BC00CBBB19 /* AppDelegate.swift */,
 			);
 			path = Tracker;
 			sourceTree = "<group>";
@@ -139,7 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E572336928D7857600CBBB19 /* ContentView.swift in Sources */,
+				E572337728D786BC00CBBB19 /* AppDelegate.swift in Sources */,
 				E572336728D7857600CBBB19 /* TrackerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,6 +278,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Tracker/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -303,6 +306,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Tracker/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
