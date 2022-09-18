@@ -11,7 +11,8 @@ import SwiftUI
 struct TrackerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            EmptyView()
+                .frame(width: 0, height: 0)
         }
     }
 }

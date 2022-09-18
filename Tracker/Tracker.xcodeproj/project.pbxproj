@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E572336728D7857600CBBB19 /* TrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E572336628D7857600CBBB19 /* TrackerApp.swift */; };
-		E572336928D7857600CBBB19 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E572336828D7857600CBBB19 /* ContentView.swift */; };
 		E572336B28D7857800CBBB19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E572336A28D7857800CBBB19 /* Assets.xcassets */; };
 		E572336E28D7857800CBBB19 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E572336D28D7857800CBBB19 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -16,7 +15,6 @@
 /* Begin PBXFileReference section */
 		E572336328D7857600CBBB19 /* Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E572336628D7857600CBBB19 /* TrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerApp.swift; sourceTree = "<group>"; };
-		E572336828D7857600CBBB19 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E572336A28D7857800CBBB19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E572336D28D7857800CBBB19 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E572336F28D7857800CBBB19 /* Tracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tracker.entitlements; sourceTree = "<group>"; };
@@ -55,7 +53,6 @@
 			children = (
 				E572337528D7860800CBBB19 /* Info.plist */,
 				E572336628D7857600CBBB19 /* TrackerApp.swift */,
-				E572336828D7857600CBBB19 /* ContentView.swift */,
 				E572336A28D7857800CBBB19 /* Assets.xcassets */,
 				E572336F28D7857800CBBB19 /* Tracker.entitlements */,
 				E572336C28D7857800CBBB19 /* Preview Content */,
@@ -141,7 +138,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E572336928D7857600CBBB19 /* ContentView.swift in Sources */,
 				E572336728D7857600CBBB19 /* TrackerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
