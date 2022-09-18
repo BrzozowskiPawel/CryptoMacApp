@@ -26,7 +26,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 // MARK: - POPOVER
 
-extension AppDelegate {
+extension AppDelegate: NSPopoverDelegate {
     func setupPopover() {
         popover.behavior = .transient
         popover.animates = true
@@ -37,6 +37,14 @@ extension AppDelegate {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .padding()
         )
+        popover.delegate = self
+    }
+    
+    func popoverDidClose(_ notification: Notification) {
+        let positioningView = statusItem.button?.subviews.first {
+            $0.identifier == NSUserInterfaceItemIdentifier("positioningView")
+        }
+        positioningView?.removeFromSuperview()
     }
 }
 
@@ -69,7 +77,13 @@ extension AppDelegate {
         }
         
         guard let menuButton = statusItem.button else { return }
+        
+        let positioningView = NSView(frame: menuButton.bounds)
+        positioningView.identifier = NSUserInterfaceItemIdentifier("positioningView")
+        menuButton.addSubview(positioningView)
+        
         popover.show(relativeTo: menuButton.bounds, of: menuButton, preferredEdge: .maxY)
+        menuButton.bounds = menuButton.bounds.offsetBy(dx: 0, dy: menuButton.bounds.height)
         popover.contentViewController?.view.window?.makeKey()
     }
 }
