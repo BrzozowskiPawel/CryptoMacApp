@@ -11,6 +11,8 @@ import SwiftUI
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     var statusItem: NSStatusItem!
+    var popover = NSPopover()
+    
     private lazy var contentView: NSView?  = {
         let view = (statusItem.value(forKey: "window") as? NSWindow)?.contentView
         return view
@@ -18,6 +20,31 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ notification: Notification) {
         setupManuBar()
+        setupPopover()
+    }
+}
+
+// MARK: - POPOVER
+
+extension AppDelegate: NSPopoverDelegate {
+    func setupPopover() {
+        popover.behavior = .transient
+        popover.animates = true
+        popover.contentSize = .init(width: 240, height: 240)
+        popover.contentViewController = NSViewController()
+        popover.contentViewController?.view = NSHostingView(
+            rootView: PopoverView()
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .padding()
+        )
+        popover.delegate = self
+    }
+    
+    func popoverDidClose(_ notification: Notification) {
+        let positioningView = statusItem.button?.subviews.first {
+            $0.identifier == NSUserInterfaceItemIdentifier("positioningView")
+        }
+        positioningView?.removeFromSuperview()
     }
 }
 
@@ -44,6 +71,19 @@ extension AppDelegate {
     }
     
     @objc func menuButtonClicked() {
-        print("User clicked menu button")
+        if popover.isShown {
+            popover.performClose(nil)
+            return
+        }
+        
+        guard let menuButton = statusItem.button else { return }
+        
+        let positioningView = NSView(frame: menuButton.bounds)
+        positioningView.identifier = NSUserInterfaceItemIdentifier("positioningView")
+        menuButton.addSubview(positioningView)
+        
+        popover.show(relativeTo: menuButton.bounds, of: menuButton, preferredEdge: .maxY)
+        menuButton.bounds = menuButton.bounds.offsetBy(dx: 0, dy: menuButton.bounds.height)
+        popover.contentViewController?.view.window?.makeKey()
     }
 }
