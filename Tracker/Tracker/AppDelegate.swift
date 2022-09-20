@@ -12,6 +12,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     var statusItem: NSStatusItem!
     var popover = NSPopover()
+    let coinService = CoinService()
     
     private lazy var contentView: NSView?  = {
         let view = (statusItem.value(forKey: "window") as? NSWindow)?.contentView
@@ -19,8 +20,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }()
     
     func applicationDidFinishLaunching(_ notification: Notification) {
+        setupCoinService()
         setupManuBar()
         setupPopover()
+    }
+    
+    func setupCoinService() {
+        coinService.connect()
     }
 }
 

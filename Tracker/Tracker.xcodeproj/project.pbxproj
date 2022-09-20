@@ -13,6 +13,9 @@
 		E572337728D786BC00CBBB19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E572337628D786BC00CBBB19 /* AppDelegate.swift */; };
 		E572337928D78D9900CBBB19 /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E572337828D78D9900CBBB19 /* MenuBarView.swift */; };
 		E572337B28D791EA00CBBB19 /* PopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E572337A28D791EA00CBBB19 /* PopoverView.swift */; };
+		E572337D28D79CB100CBBB19 /* CoinType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E572337C28D79CB100CBBB19 /* CoinType.swift */; };
+		E572337F28D79D4B00CBBB19 /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E572337E28D79D4B00CBBB19 /* Coin.swift */; };
+		E572338128D7A4B800CBBB19 /* CoinService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E572338028D7A4B800CBBB19 /* CoinService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +28,9 @@
 		E572337628D786BC00CBBB19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E572337828D78D9900CBBB19 /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
 		E572337A28D791EA00CBBB19 /* PopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverView.swift; sourceTree = "<group>"; };
+		E572337C28D79CB100CBBB19 /* CoinType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinType.swift; sourceTree = "<group>"; };
+		E572337E28D79D4B00CBBB19 /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
+		E572338028D7A4B800CBBB19 /* CoinService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +71,9 @@
 				E572337628D786BC00CBBB19 /* AppDelegate.swift */,
 				E572337828D78D9900CBBB19 /* MenuBarView.swift */,
 				E572337A28D791EA00CBBB19 /* PopoverView.swift */,
+				E572337C28D79CB100CBBB19 /* CoinType.swift */,
+				E572337E28D79D4B00CBBB19 /* Coin.swift */,
+				E572338028D7A4B800CBBB19 /* CoinService.swift */,
 			);
 			path = Tracker;
 			sourceTree = "<group>";
@@ -147,9 +156,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E572337F28D79D4B00CBBB19 /* Coin.swift in Sources */,
+				E572337D28D79CB100CBBB19 /* CoinType.swift in Sources */,
 				E572337928D78D9900CBBB19 /* MenuBarView.swift in Sources */,
 				E572337728D786BC00CBBB19 /* AppDelegate.swift in Sources */,
 				E572337B28D791EA00CBBB19 /* PopoverView.swift in Sources */,
+				E572338128D7A4B800CBBB19 /* CoinService.swift in Sources */,
 				E572336728D7857600CBBB19 /* TrackerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
