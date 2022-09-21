@@ -13,6 +13,7 @@ class CoinService: NSObject {
     
     private let session = URLSession(configuration: .default)
     private var webSocketTask: URLSessionWebSocketTask?
+    private var pingCount = 0
     
     private let coinDictionarySubject = CurrentValueSubject<[String: Coin], Never>([:])
     private var coinDictionary: [String: Coin] { coinDictionarySubject.value }
@@ -30,6 +31,7 @@ class CoinService: NSObject {
         webSocketTask?.delegate = self
         webSocketTask?.resume()
         self.reciveMessage()
+        self.schedulePing()
         
     }
     
@@ -71,6 +73,45 @@ class CoinService: NSObject {
     
     }
     
+    private func schedulePing() {
+        let identifier = self.webSocketTask?.taskIdentifier ?? -1
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [weak self] in
+            guard let self = self,
+                  let task = self.webSocketTask,
+                  task.taskIdentifier == identifier else { return }
+            
+            if task.state == .running, self.pingCount < 2 {
+                self.pingCount += 1
+                print("✅ Ping sended, count: \(self.pingCount)")
+                task.sendPing { [weak self] error in
+                    if let error = error {
+                        print("❌ Ping failed: \(error.localizedDescription)")
+                    } else if self?.webSocketTask?.taskIdentifier == identifier {
+                        self?.pingCount = 0
+                    }
+                }
+                self.schedulePing()
+            } else {
+                self.reconnect()
+            }
+            
+        }
+    }
+    
+    private func reconnect() {
+        self.clearConnection()
+        self.connect()
+    }
+    
+    // To disconnect
+    func clearConnection() {
+        self.webSocketTask?.cancel()
+        self.webSocketTask = nil
+        self.pingCount = 0
+        
+        self.connectionStateSubject.send(false)
+    }
+    
     deinit {
         coinDictionarySubject.send(completion: .finished)
         connectionStateSubject.send(completion: .finished)
@@ -79,11 +120,13 @@ class CoinService: NSObject {
 
 extension CoinService: URLSessionWebSocketDelegate {
     
+    // Succesfully connected to web socket server
     func urlSession(_ session: URLSession, webSocketTask: URLSessionWebSocketTask, didOpenWithProtocol protocol: String?) {
-        
+        self.connectionStateSubject.send(true)
     }
     
+    // Canceled the currrrent task - disconnect
     func urlSession(_ session: URLSession, webSocketTask: URLSessionWebSocketTask, didCloseWith closeCode: URLSessionWebSocketTask.CloseCode, reason: Data?) {
-        
+        self.connectionStateSubject.send(false)
     }
 }
