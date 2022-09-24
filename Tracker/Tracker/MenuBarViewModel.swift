@@ -35,6 +35,14 @@ class MenuBarViewModel: ObservableObject {
         self.service = service
     }
     
+    func subscribeToService() {
+        service.coinDictionarySubject
+            .combineLatest(service.connectionStateSubject)
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in self?.updateView() }
+            .store(in: &subscriptiopns)
+    }
+    
     func updateView() {
         let coin = self.service.coinDictionary[selectedCoinType.rawValue]
         self.name = coin?.name ?? selectedCoinType.description

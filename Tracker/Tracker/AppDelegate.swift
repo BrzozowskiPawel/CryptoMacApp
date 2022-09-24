@@ -10,6 +10,7 @@ import SwiftUI
 
 class AppDelegate: NSObject, NSApplicationDelegate {
     
+    var menuBarViewModel: MenuBarViewModel!
     var statusItem: NSStatusItem!
     var popover = NSPopover()
     let coinService = CoinService()
@@ -59,11 +60,12 @@ extension AppDelegate: NSPopoverDelegate {
 
 extension AppDelegate {
     func setupManuBar() {
+        menuBarViewModel = MenuBarViewModel(service: coinService)
         statusItem = NSStatusBar.system.statusItem(withLength: 64)
         guard let contentView = self.contentView,
               let menuButton = statusItem.button else { return }
         
-        let hostingView = NSHostingView(rootView: MenuBarView())
+        let hostingView = NSHostingView(rootView: MenuBarView(viewModel: menuBarViewModel))
         hostingView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(hostingView)
         
