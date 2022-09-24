@@ -27,6 +27,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func setupCoinService() {
         coinService.connect()
+        coinService.startMonitoringNetwork()
     }
 }
 
