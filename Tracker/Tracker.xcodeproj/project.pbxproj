@@ -17,6 +17,7 @@
 		E572337D28D79CB100CBBB19 /* CoinType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E572337C28D79CB100CBBB19 /* CoinType.swift */; };
 		E572337F28D79D4B00CBBB19 /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E572337E28D79D4B00CBBB19 /* Coin.swift */; };
 		E572338128D7A4B800CBBB19 /* CoinService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E572338028D7A4B800CBBB19 /* CoinService.swift */; };
+		E5946A5E28E0D65E006DA8F6 /* PopoverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5946A5D28E0D65E006DA8F6 /* PopoverViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		E572337C28D79CB100CBBB19 /* CoinType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinType.swift; sourceTree = "<group>"; };
 		E572337E28D79D4B00CBBB19 /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
 		E572338028D7A4B800CBBB19 /* CoinService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinService.swift; sourceTree = "<group>"; };
+		E5946A5D28E0D65E006DA8F6 /* PopoverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				E572337E28D79D4B00CBBB19 /* Coin.swift */,
 				E572338028D7A4B800CBBB19 /* CoinService.swift */,
 				E56721A328DDC43F00CDE805 /* MenuBarViewModel.swift */,
+				E5946A5D28E0D65E006DA8F6 /* PopoverViewModel.swift */,
 			);
 			path = Tracker;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 				E572337F28D79D4B00CBBB19 /* Coin.swift in Sources */,
 				E572337D28D79CB100CBBB19 /* CoinType.swift in Sources */,
 				E572337928D78D9900CBBB19 /* MenuBarView.swift in Sources */,
+				E5946A5E28E0D65E006DA8F6 /* PopoverViewModel.swift in Sources */,
 				E572337728D786BC00CBBB19 /* AppDelegate.swift in Sources */,
 				E572337B28D791EA00CBBB19 /* PopoverView.swift in Sources */,
 				E572338128D7A4B800CBBB19 /* CoinService.swift in Sources */,
