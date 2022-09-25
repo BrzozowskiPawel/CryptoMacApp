@@ -19,9 +19,13 @@ struct MenuBarView: View {
             }
             .font(.caption)
         }
+        .onChange(of: viewModel.selectedCoinType) {
+            _ in viewModel.updateView()
+        }
         .onAppear {
             viewModel.subscribeToService()
         }
+        
     }
 }
 

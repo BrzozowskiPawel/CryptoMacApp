@@ -28,7 +28,7 @@ class CoinService: NSObject {
             .map { $0.rawValue }
             .joined(separator: ",")
         // could be assets=ALL
-        let url = URL(string: "wss://ws.coincap.io/prices?assets=\(coins)")!
+        let url = URL(string: "wss://ws.coincap.io/prices?assets=ALL")!
         webSocketTask = session.webSocketTask(with: url)
         webSocketTask?.delegate = self
         webSocketTask?.resume()

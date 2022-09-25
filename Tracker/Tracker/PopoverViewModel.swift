@@ -35,9 +35,9 @@ class PopoverViewModel: ObservableObject {
     }
     
     func subscribeToService() {
-        service.coinDictionarySubject.sink { [weak self] _ in
-            self?.updateView()
-        }
+        service.coinDictionarySubject
+        .receive(on: DispatchQueue.main)
+        .sink { [weak self] _ in self?.updateView() }
         .store(in: &subscriptiopns)
     }
     
