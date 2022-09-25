@@ -11,6 +11,8 @@ import SwiftUI
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     var menuBarViewModel: MenuBarViewModel!
+    var popoverViewModel: PopoverViewModel!
+    
     var statusItem: NSStatusItem!
     var popover = NSPopover()
     let coinService = CoinService()
@@ -36,12 +38,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 extension AppDelegate: NSPopoverDelegate {
     func setupPopover() {
+        popoverViewModel = .init(service: coinService)
         popover.behavior = .transient
         popover.animates = true
         popover.contentSize = .init(width: 240, height: 240)
         popover.contentViewController = NSViewController()
         popover.contentViewController?.view = NSHostingView(
-            rootView: PopoverView()
+            rootView: PopoverView(viewModel: popoverViewModel)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .padding()
         )
