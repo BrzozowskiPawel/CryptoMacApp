@@ -14,7 +14,7 @@ struct PopoverView: View {
     var body: some View {
         VStack(spacing: 16) {
             VStack {
-                Text(viewModel.title).font(.largeTitle)
+                Text(viewModel.title.capitalized).font(.largeTitle)
                 Text(viewModel.subtitle).font(.title.bold())
             }
             
